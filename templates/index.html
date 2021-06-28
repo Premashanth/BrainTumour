@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brain Tumour Classification</title>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+</head>
+<body>
+<div class="wrapper">
+  <h1>Brain Tumour Classification</h1>
+  <div class="container">
+    <h1 style="color: black">Upload Tumour</h1>
+    <div class="upload-container">
+      <div class="border-container">
+        <div class="icons fa-4x">
+          <i class="fas fa-file-image" data-fa-transform="shrink-2 up-4"></i>
+        </div>
+          <form method="post" enctype="multipart/form-data">
+              <input name="brain" type="file" id="file-upload">
+              <br>
+            <button style="margin-top: 20px; width: 200px; background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;" type="submit">Predict Tumour</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="float: left; width: 20%; display: inline-flex; margin: 40px; padding: 40px">
+        {% if img and new %}
+            <img style="border: 20px solid white; border-radius: 20px" width="400px" height="400px" src="../static/Images/{{ img }}">
+            <img style="border: 20px solid white; border-radius: 20px; margin-left: 210px" width="400px" height="400px" src="../static/Images/{{ new }}">
+        {% else %}
+            <div></div>
+        {% endif %}
+    </div>
+</body>
+</html>
